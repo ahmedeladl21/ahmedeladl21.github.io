@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Eladl — Fachinformatiker i.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f0f3f5;
+    --paper-line:#c7d2d9;
+    --ink:#152430;
+    --ink-soft:#4a5b68;
+    --blue:#2e6690;
+    --blue-deep:#183b52;
+    --amber:#dd9a3c;
+    --white:#ffffff;
+    --radius:2px;
+    --max:760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    background-image:
+      linear-gradient(var(--paper-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
+    background-size:36px 36px;
+    background-position:-1px -1px;
+  }
+
+  a{color:var(--blue-deep);}
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  header.hero{
+    padding:88px 0 56px;
+    position:relative;
+  }
+
+  .kicker{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:13px;
+    letter-spacing:0.02em;
+    color:var(--blue);
+    margin:0 0 18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .kicker::before{
+    content:"";
+    width:26px;
+    height:1px;
+    background:var(--blue);
+    display:inline-block;
+  }
+
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:clamp(2.4rem, 6vw, 3.6rem);
+    line-height:1.05;
+    margin:0 0 14px;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+
+  .role{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:1.15rem;
+    color:var(--ink-soft);
+    margin:0 0 34px;
+    max-width:38ch;
+  }
+
+  .contact-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 22px;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+  }
+  .contact-strip a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-bottom:1px solid var(--paper-line);
+    padding-bottom:1px;
+  }
+  .contact-strip a:hover{
+    color:var(--blue-deep);
+    border-color:var(--blue);
+  }
+
+  section{
+    padding:52px 0;
+    border-top:1px solid var(--paper-line);
+  }
+
+  h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:1.5rem;
+    font-weight:600;
+    margin:0 0 22px;
+    color:var(--blue-deep);
+  }
+
+  .profile p{
+    max-width:62ch;
+    color:var(--ink);
+    font-size:1.02rem;
+  }
+
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(190px, 1fr));
+    gap:12px 20px;
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .skills-grid li{
+    padding:12px 0;
+    border-bottom:1px solid var(--paper-line);
+    font-size:0.95rem;
+  }
+  .skills-grid li span.tag{
+    display:block;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:0.72rem;
+    color:var(--blue);
+    margin-top:2px;
+  }
+
+  .projects{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .project-card{
+    border:1px solid var(--paper-line);
+    background:var(--white);
+    padding:22px 24px;
+    border-radius:var(--radius);
+  }
+  .project-card h3{
+    font-family:'Space Grotesk', sans-serif;
+    margin:0 0 6px;
+    font-size:1.08rem;
+    color:var(--ink);
+  }
+  .project-card p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+  }
+  .project-card.placeholder{
+    border-style:dashed;
+    color:var(--ink-soft);
+    background:transparent;
+  }
+  .project-card.placeholder p{
+    margin:0;
+  }
+
+  .lang-list{
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .lang-list li{
+    font-size:0.95rem;
+  }
+  .lang-list li strong{
+    display:block;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:0.98rem;
+    color:var(--ink);
+  }
+  .lang-list li span{
+    color:var(--ink-soft);
+    font-size:0.85rem;
+  }
+
+  footer{
+    padding:44px 0 60px;
+    border-top:1px solid var(--paper-line);
+    color:var(--ink-soft);
+    font-size:0.88rem;
+  }
+  footer a{
+    color:var(--blue-deep);
+  }
+
+  @media (max-width:520px){
+    header.hero{padding:56px 0 40px;}
+    section{padding:40px 0;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+    <header class="hero">
+      <p class="kicker">Portfolio</p>
+      <h1>Ahmed Eladl</h1>
+      <p class="role">Bewerber für eine Ausbildung zum Fachinformatiker für Anwendungsentwicklung</p>
+      <div class="contact-strip">
+        <a href="mailto:ahmed.tarek20329@gmail.com">ahmed.tarek20329@gmail.com</a>
+        <a href="tel:+436764123130">+43 676 4123130</a>
+        <span>Dortmund</span>
+        <a href="https://github.com/ahmedeladi21" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </header>
+
+    <section class="profile">
+      <h2>Über mich</h2>
+      <p>
+        Motivierter und technikaffiner Bewerber mit großem Interesse an Programmierung,
+        Webentwicklung und künstlicher Intelligenz. Nach meinem Schulabschluss in Ägypten
+        habe ich von 2018 bis 2021 Bauingenieurwesen studiert. Seit 2022 lebe ich in Österreich
+        und habe meine Kenntnisse in verschiedenen digitalen Bereichen weiterentwickelt —
+        mit praktischer Erfahrung in der Erstellung von Websites, Videos und digitalen
+        Werbeinhalten mit KI-Tools. Mein Ziel ist es, im Rahmen einer Ausbildung fundierte
+        Programmierkenntnisse zu erwerben und mich langfristig im Bereich Softwareentwicklung
+        zu spezialisieren.
+      </p>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <ul class="skills-grid">
+        <li>KI-gestützte Webentwicklung<span class="tag">Web / AI</span></li>
+        <li>Website-Erstellung<span class="tag">Web</span></li>
+        <li>KI-gestützte Videoproduktion<span class="tag">Media</span></li>
+        <li>Social-Media-Marketing<span class="tag">Marketing</span></li>
+        <li>Digitale Content-Erstellung<span class="tag">Media</span></li>
+        <li>Schnelle Auffassungsgabe<span class="tag">Soft Skill</span></li>
+        <li>Problemlösungsorientiertes Denken<span class="tag">Soft Skill</span></li>
+        <li>Teamfähigkeit<span class="tag">Soft Skill</span></li>
+      </ul>
+    </section>
+
+    <section class="work">
+      <h2>Projekte</h2>
+      <div class="projects">
+        <div class="project-card placeholder">
+          <p>Hier entstehen bald erste Projekte — Websites, kleine Tools oder Videos, die mit KI-Unterstützung umgesetzt wurden. Diese Seite selbst ist der erste Schritt dazu.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="languages">
+      <h2>Sprachen</h2>
+      <ul class="lang-list">
+        <li><strong>Arabisch</strong><span>Muttersprache</span></li>
+        <li><strong>Deutsch</strong><span>B1 – B2 (Telc)</span></li>
+        <li><strong>Englisch</strong><span>Grundkenntnisse</span></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Kontakt: <a href="mailto:ahmed.tarek20329@gmail.com">ahmed.tarek20329@gmail.com</a> · +43 676 4123130 · Dortmund</p>
+    </footer>
+  </div>
+
+</body>
+</html>
